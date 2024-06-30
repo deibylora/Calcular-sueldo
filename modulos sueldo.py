@@ -15,10 +15,12 @@ def sueldo(horas_dia_scheduled, horas_dia_off, horas_nocturnas, pago_porhora):
     else:
         print ("Ingrese un valor valido y mayor que cero")
 
-    ARS_basico = Sueldo * 0.304
+    SFS = Sueldo * 0.304
     AFP = Sueldo * 0.287
-    Sueldo_Neto = Sueldo - (ARS_basico + AFP)
+    Sueldo_Neto = Sueldo - (SFS + AFP)
 
+
+#Arreglar IRS,se calcula mensual, y solamente el prociento aplica si sobrepasa la cantidad
     if Sueldo_Neto < 34685:
         sueldo_IRS = Sueldo_Neto
         return sueldo_IRS
