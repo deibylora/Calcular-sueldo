@@ -17,5 +17,3 @@ while True:
             print (informacion())
         else:
             print ("Elija una opcion correcta:\n")
-
-
