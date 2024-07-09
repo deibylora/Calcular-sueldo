@@ -11,3 +11,6 @@
 # sueldo_neto = Sueldo_bruto - IRS25 - IRS20 - IRS15 - (SFS + AFP)
 
 # print(sueldo_neto)
+
+
+print("loco")
