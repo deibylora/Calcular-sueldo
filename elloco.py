@@ -12,5 +12,9 @@
 
 # print(sueldo_neto)
 
-
-print("loco")
+def name (*nombres):
+    for nombre in nombres:
+        nombre+=nombre
+        capitalizado = nombre.capitalize()
+    print (capitalizado)
+print(name("deiby", "mirian", "engel", "noel"))
