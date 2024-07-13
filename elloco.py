@@ -1,20 +1,12 @@
 
-# Sueldo_bruto = 100000
+#pruebas de codigo
 
-# SFS = Sueldo_bruto * 0.0304
-# AFP = Sueldo_bruto * 0.0287
+listanumeros = [3,2,6,4,1]
 
-# IRS0 = 34685
-# IRS15 = 17342.416666667*0.15
-# IRS20 = 20232.833333333* 0.20
-# IRS25 = (Sueldo_bruto - IRS0 - 17342.416666667 - 20232.833333333) * 0.25
-# sueldo_neto = Sueldo_bruto - IRS25 - IRS20 - IRS15 - (SFS + AFP)
+multi = list(map(lambda x: x**2, listanumeros))
 
-# print(sueldo_neto)
 
-def name (*nombres):
-    for nombre in nombres:
-        nombre+=nombre
-        capitalizado = nombre.capitalize()
-    print (capitalizado)
-print(name("deiby", "mirian", "engel", "noel"))
+filtro = list(filter(lambda x: x==4, listanumeros))
+
+print(multi)
+print(filtro)
