@@ -17,25 +17,53 @@ def sueldo(horas_dia_scheduled, horas_dia_off, horas_nocturnas, pago_porhora, de
     Sueldo_bruto = Sueldo 
 
     if Sueldo_bruto < 34685:
-        sueldo_neto = Sueldo_bruto - (SFS + AFP) - deducciones
-        return f"Sueldo neto: {sueldo_neto}, SFS: {SFS}, AFP: {AFP}\n" 
+        IRSfinal = 0
+        sueldo_neto = Sueldo_bruto - IRSfinal - (SFS + AFP) - deducciones
+        return f"""----------Paystub------------
+        
+        Total de ingresos:                {Sueldo_bruto}
+        Seguro basico:                    {SFS}, AFP: {AFP}
+        Impuestos sobre la renta:         {IRSfinal}
+        deduciones extras:                {deducciones}
+        Ingreso neto:                     {sueldo_neto}\n""" 
+    
     if Sueldo_bruto >= 34685 and Sueldo_bruto <= 52027.416666667:
-        sueldo_neto = Sueldo_bruto - ((Sueldo_bruto - 34685)*0.15) - (SFS + AFP) - deducciones
-        return f"Sueldo neto: {sueldo_neto}, SFS: {SFS}, AFP: {AFP}\n" 
+        IRSfinal = (Sueldo_bruto - 34685)*0.15
+        sueldo_neto = Sueldo_bruto - IRSfinal - (SFS + AFP) - deducciones
+        return f"""----------Paystub------------
+        
+        Total de ingresos:                {Sueldo_bruto}
+        Seguro basico:                    {SFS}, AFP: {AFP}
+        Impuestos sobre la renta:         {IRSfinal}
+        deduciones extras:                {deducciones}
+        Ingreso neto:                     {sueldo_neto}\n""" 
+    
     if Sueldo_bruto >= 52027.416666667 and Sueldo_bruto <= 72260.25:
         IRS0 = 34685
         IRS15 = 17342.416666667*0.15
-        IRS20 = (Sueldo_bruto - IRS0 - 17342.416666667) * 0.20
-        sueldo_neto = Sueldo_bruto - IRS20 - IRS15 - (SFS + AFP) - deducciones
-        return f"Sueldo neto: {sueldo_neto}, SFS: {SFS}, AFP: {AFP}\n" 
+        IRSfinal = (Sueldo_bruto - IRS0 - 17342.416666667) * 0.20
+        sueldo_neto = Sueldo_bruto - IRSfinal - IRS15 - (SFS + AFP) - deducciones
+        return f"""----------Paystub------------
+        
+        Total de ingresos:                {Sueldo_bruto}
+        Seguro basico:                    {SFS}, AFP: {AFP}
+        Impuestos sobre la renta:         {IRSfinal}
+        deduciones extras:                {deducciones}
+        Ingreso neto:                     {sueldo_neto}\n""" 
     if Sueldo_bruto > 72260.25:
         IRS0 = 34685
         IRS15 = 17342.416666667*0.15
         IRS20 = 20232.833333333* 0.20
-        IRS25 = (Sueldo_bruto - IRS0 - 17342.416666667 - 20232.833333333) * 0.25
-        sueldo_neto = Sueldo_bruto - IRS25 - IRS20 - IRS15 - (SFS + AFP) - deducciones
+        IRSfinal = (Sueldo_bruto - IRS0 - 17342.416666667 - 20232.833333333) * 0.25
+        sueldo_neto = Sueldo_bruto - IRSfinal - IRS20 - IRS15 - (SFS + AFP) - deducciones
 
-        return f"Sueldo neto: {sueldo_neto}, SFS: {SFS}, AFP: {AFP}\n" 
+        return f"""----------Paystub------------
+        
+        Total de ingresos:                {Sueldo_bruto}
+        Seguro basico:                    {SFS}, AFP: {AFP}
+        Impuestos sobre la renta:         {IRSfinal}
+        deduciones extras:                {deducciones}
+        Ingreso neto:                     {sueldo_neto}\n""" 
 
 def informacion():
     pago_hora = int(input("Ingrese su pago por hora: "))

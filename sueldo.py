@@ -1,4 +1,4 @@
-from modulos_sueldo import sueldo, informacion
+from modulos_sueldo import informacion
 
 while True:
     menu_principal = input("""Calculadora de sueldo, seleccione una opcion:
@@ -6,7 +6,6 @@ while True:
             1-Calcular sueldo por quincena
             2-Calcular sueldo mensual
             3-Calcular doble sueldo\n""")
-    
     #corregir esto
     if menu_principal in ("1", "2", "3", "4"):
         if menu_principal == "1":
